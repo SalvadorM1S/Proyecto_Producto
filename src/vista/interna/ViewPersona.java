@@ -23,6 +23,14 @@ public class ViewPersona extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnReportes() {
+        return btnReportes;
+    }
+
+    public void setBtnReportes(JButton btnReportes) {
+        this.btnReportes = btnReportes;
+    }
+
     public JButton getBtnEditar() {
         return BtnEditar;
     }
@@ -108,7 +116,7 @@ public class ViewPersona extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablePersona = new javax.swing.JTable();
         BtnCancelar = new javax.swing.JButton();
-        BtnEditar1 = new javax.swing.JButton();
+        btnReportes = new javax.swing.JButton();
         BtnImprimir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -163,6 +171,8 @@ public class ViewPersona extends javax.swing.JInternalFrame {
 
         BtnCancelar.setText("Cancelar");
 
+        btnReportes.setText("Reportes");
+
         BtnImprimir.setText("Imprimir");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -177,7 +187,7 @@ public class ViewPersona extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(BtnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
@@ -190,7 +200,7 @@ public class ViewPersona extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49))
         );
@@ -404,11 +414,11 @@ public class ViewPersona extends javax.swing.JInternalFrame {
     }
 
     public JButton getBtnEditar1() {
-        return BtnEditar1;
+        return btnReportes;
     }
 
     public void setBtnEditar1(JButton BtnEditar1) {
-        this.BtnEditar1 = BtnEditar1;
+        this.btnReportes = BtnEditar1;
     }
 
     public JButton getBtnImprimir() {
@@ -455,12 +465,12 @@ public class ViewPersona extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnBuscar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnEditar;
-    private javax.swing.JButton BtnEditar1;
     private javax.swing.JButton BtnEliminar;
     private javax.swing.JButton BtnImprimir;
     private javax.swing.JButton BtnLimpiar;
     private javax.swing.JButton BtnLimpiar1;
     private javax.swing.JButton btnCrear;
+    private javax.swing.JButton btnReportes;
     private javax.swing.JCheckBox jCheckMostrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

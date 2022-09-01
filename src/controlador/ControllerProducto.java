@@ -5,7 +5,7 @@
  */
 package controlador;
 
-import controller.Resouces;
+import controlador.Resouces;
 import java.awt.Dimension;
 import java.math.BigInteger;
 import java.util.logging.Level;

@@ -5,7 +5,7 @@
  */
 package controlador;
 
-import controller.Resouces;
+import controlador.Resouces;
 import java.awt.Dimension;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -83,6 +83,7 @@ public class ControllerPersona {
          this.vista.getBtnCrear().addActionListener(l -> guardarPersona());
         this.vista.getBtnEditar().addActionListener(l -> editarPersona());
         this.vista.getBtnEliminar().addActionListener(l -> eliminarPersona());
+        this.vista.getBtnReportes().addActionListener(l -> reporteGeneral());
         this.vista.getjTable1().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listaPersonaModel = this.vista.getjTable1().getSelectionModel();
         listaPersonaModel.addListSelectionListener(new ListSelectionListener() {
@@ -216,4 +217,9 @@ public class ControllerPersona {
         ModeloTabla.fireTableDataChanged();
 
     }
+    //llamar
+ public void reporteGeneral() {
+        Resouces.imprimirReeporte(ManageFactory.getConnection(manage.getEntityManagerFactory().createEntityManager()), "/reportes/Persona.jasper");
+    }
+    
 }

@@ -29,6 +29,14 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
         return BtnBuscar;
     }
 
+    public JButton getBtnReportes() {
+        return BtnReportes;
+    }
+
+    public void setBtnReportes(JButton BtnReportes) {
+        this.BtnReportes = BtnReportes;
+    }
+
     public void setBtnBuscar(JButton BtnBuscar) {
         this.BtnBuscar = BtnBuscar;
     }
@@ -50,11 +58,11 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
     }
 
     public JButton getBtnEditar1() {
-        return BtnEditar1;
+        return BtnReportes;
     }
 
     public void setBtnEditar1(JButton BtnEditar1) {
-        this.BtnEditar1 = BtnEditar1;
+        this.BtnReportes = BtnEditar1;
     }
 
     public JButton getBtnEliminar() {
@@ -161,7 +169,7 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         JtablaUsuario = new javax.swing.JTable();
         BtnCancelar = new javax.swing.JButton();
-        BtnEditar1 = new javax.swing.JButton();
+        BtnReportes = new javax.swing.JButton();
         BtnImprimir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -208,6 +216,8 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
 
         BtnCancelar.setText("Cancelar");
 
+        BtnReportes.setText("Reportes");
+
         BtnImprimir.setText("Imprimir");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -222,7 +232,7 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(BtnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
@@ -235,7 +245,7 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49))
         );
@@ -272,7 +282,7 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Crear Producto");
+        jLabel8.setText("Crear Usuario");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 190, -1));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
@@ -302,7 +312,7 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Busqueda de productos");
+        jLabel1.setText("Busqueda de Usuario");
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -387,11 +397,11 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         pack();
@@ -402,11 +412,11 @@ public class ViewUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnBuscar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnEditar;
-    private javax.swing.JButton BtnEditar1;
     private javax.swing.JButton BtnEliminar;
     private javax.swing.JButton BtnImprimir;
     private javax.swing.JButton BtnLimpiar;
     private javax.swing.JButton BtnLimpiar1;
+    private javax.swing.JButton BtnReportes;
     private javax.swing.JTable JtablaUsuario;
     private javax.swing.JButton btnCrear;
     private javax.swing.JCheckBox jCheckMostrar;

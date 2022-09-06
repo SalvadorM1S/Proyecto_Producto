@@ -38,12 +38,12 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jPanel2" min="-2" pref="670" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -72,7 +72,7 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="BtnImprimir" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                  <Component id="BtnEditar1" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="BtnReportes" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                   <Component id="BtnCancelar" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -87,7 +87,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="BtnImprimir" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="BtnEditar1" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="BtnReportes" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="BtnCancelar" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
@@ -128,7 +128,10 @@
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="BtnEditar1">
+        <Component class="javax.swing.JButton" name="BtnReportes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reportes"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="BtnImprimir">
           <Properties>
@@ -245,7 +248,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Crear Producto"/>
+            <Property name="text" type="java.lang.String" value="Crear Usuario"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -421,7 +424,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Busqueda de productos"/>
+            <Property name="text" type="java.lang.String" value="Busqueda de Usuario"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">

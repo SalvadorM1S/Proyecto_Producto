@@ -7,6 +7,8 @@ package controlador;
 
 import controlador.Resouces;
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -80,10 +82,11 @@ public class ControllerPersona {
 //            }
 //
 //        });
-         this.vista.getBtnCrear().addActionListener(l -> guardarPersona());
+        this.vista.getBtnCrear().addActionListener(l -> guardarPersona());
         this.vista.getBtnEditar().addActionListener(l -> editarPersona());
         this.vista.getBtnEliminar().addActionListener(l -> eliminarPersona());
         this.vista.getBtnReportes().addActionListener(l -> reporteGeneral());
+        this.vista.getBtnImprimir().addActionListener(l -> reporteIndividual());
         this.vista.getjTable1().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listaPersonaModel = this.vista.getjTable1().getSelectionModel();
         listaPersonaModel.addListSelectionListener(new ListSelectionListener() {
@@ -115,7 +118,6 @@ public class ControllerPersona {
 //            System.out.println("Capturando errores cargarCombobox()");
 //        }
 //    }
-    
     public void guardarPersona() {
         persona = new Persona();
         persona.setNombre(this.vista.getTxtNombre().getText());
@@ -144,7 +146,7 @@ public class ControllerPersona {
             } catch (Exception e) {
                 java.util.logging.Logger.getLogger(ControllerPersona.class.getName()).log(Level.SEVERE, null, e);
             }
-            
+
             Resouces.success("Atención!!", "Persona editar Correctamente");
             limpiar();
         }
@@ -202,14 +204,13 @@ public class ControllerPersona {
             ModeloTabla.setFilas(modeloPersona.findPersonaEntities());
             ModeloTabla.fireTableDataChanged();
         }
-            if (!this.vista.getTxtBuscar().getText().equals("")) {
-                ModeloTabla.setFilas(modeloPersona.buscarPersona(this.vista.getTxtBuscar().getText()));
-                ModeloTabla.fireTableDataChanged();
-            } else {
-                limpiarbuscador();
-            }
+        if (!this.vista.getTxtBuscar().getText().equals("")) {
+            ModeloTabla.setFilas(modeloPersona.buscarPersona(this.vista.getTxtBuscar().getText()));
+            ModeloTabla.fireTableDataChanged();
+        } else {
+            limpiarbuscador();
         }
-    
+    }
 
     public void limpiarbuscador() {
         this.vista.getTxtBuscar().setText("");
@@ -217,9 +218,26 @@ public class ControllerPersona {
         ModeloTabla.fireTableDataChanged();
 
     }
+
     //llamar
- public void reporteGeneral() {
-        Resouces.imprimirReeporte(ManageFactory.getConnection(manage.getEntityManagerFactory().createEntityManager()), "/reportes/Persona.jasper");
+    public void reporteGeneral() {
+        Resouces.imprimirReeporte(ManageFactory.getConnection(manage.getEntityManagerFactory().createEntityManager()), "/reportes/Persona.jasper", new HashMap());
     }
-    
+
+    //reporte individual
+    public void reporteIndividual() {
+       //validar si existe un reporte de poersona
+        if (persona!= null) {
+            //Construir los parametros de envio al reporte
+            Map parameters= new HashMap();
+            //Asignar parametros al 
+            parameters. put("id",persona.getIdpersona());
+            //Llamamos al metodo del reporte
+            Resouces.imprimirReeporte(ManageFactory.getConnection(manage.getEntityManagerFactory().createEntityManager()), "/reportes/Individual.jasper", parameters);
+            
+        }else{
+            Resouces.warning("Atencion!!", "Debe selecionar una persona");
+        }
+    }
+
 }

@@ -7,6 +7,8 @@ package controlador;
 
 import controlador.Resouces;
 import java.awt.Dimension;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -69,6 +71,8 @@ public class ControllerUsuario {
         this.vista.getBtnCrear().addActionListener(l -> guardarUsuario());
         this.vista.getBtnEditar().addActionListener(l -> editarUsuario());
         this.vista.getBtnEliminar().addActionListener(l -> eliminarUsuario());
+        this.vista.getBtnReportes().addActionListener(l -> reporteGeneral());
+        this.vista.getBtnImprimir().addActionListener(l -> reporteIndividual());
         this.vista.getTablausuario().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listaUsernaModel = this.vista.getTablausuario().getSelectionModel();
         listaUsernaModel.addListSelectionListener(new ListSelectionListener() {
@@ -190,5 +194,25 @@ public class ControllerUsuario {
 
         }
 
+    }
+    
+    public void reporteGeneral() {
+        Resouces.imprimirReeporte(ManageFactory.getConnection(manage.getEntityManagerFactory().createEntityManager()), "/reportes/Usuario.jasper", new HashMap());
+    }
+    
+    //reporte individual
+    public void reporteIndividual() {
+       //validar si existe un reporte de poersona
+        if (usuario!= null) {
+            //Construir los parametros de envio al reporte
+            Map parameters= new HashMap();
+            //Asignar parametros al 
+            parameters. put("id",usuario.getIdusuario());
+            //Llamamos al metodo del reporte
+            Resouces.imprimirReeporte(ManageFactory.getConnection(manage.getEntityManagerFactory().createEntityManager()), "/reportes/Individualusua.jasper", parameters);
+            
+        }else{
+            Resouces.warning("Atencion!!", "Debe selecionar un producto");
+        }
     }
 }

@@ -8,6 +8,8 @@ package controlador;
 import controlador.Resouces;
 import java.awt.Dimension;
 import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
@@ -117,6 +119,8 @@ public class ControllerProducto {
         this.vista.getBtnCrear().addActionListener(l -> guardarProducto());
         this.vista.getBtnEditar().addActionListener(l -> editarProducto());
         this.vista.getBtnEliminar().addActionListener(l -> eliminarProducto());
+        this.vista.getBtnReportes().addActionListener(l -> reporteGeneral());
+        this.vista.getBtnImprimir().addActionListener(l -> reporteIndividual());
         this.vista.getJtablaProductos().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listaProductoModel = this.vista.getJtablaProductos().getSelectionModel();
         listaProductoModel.addListSelectionListener(new ListSelectionListener() {
@@ -183,5 +187,24 @@ public class ControllerProducto {
         this.vista.getTxtBuscar().setText("");
         modeloTabla.setFilas(modeloProducto.findProductoEntities());
         modeloTabla.fireTableDataChanged();
+    }
+    public void reporteGeneral() {
+        Resouces.imprimirReeporte(ManageFactory.getConnection(manage.getEntityManagerFactory().createEntityManager()), "/reportes/Producto.jasper", new HashMap());
+    }
+    
+    //reporte individual
+    public void reporteIndividual() {
+       //validar si existe un reporte de poersona
+        if (producto!= null) {
+            //Construir los parametros de envio al reporte
+            Map parameters= new HashMap();
+            //Asignar parametros al 
+            parameters. put("id",producto.getIdproducto());
+            //Llamamos al metodo del reporte
+            Resouces.imprimirReeporte(ManageFactory.getConnection(manage.getEntityManagerFactory().createEntityManager()), "/reportes/IndividualProd.jasper", parameters);
+            
+        }else{
+            Resouces.warning("Atencion!!", "Debe selecionar un producto");
+        }
     }
 }

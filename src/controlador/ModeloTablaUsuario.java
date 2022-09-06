@@ -15,7 +15,7 @@ import modelo.Usuario;
  * @author Shalva
  */
 public class ModeloTablaUsuario extends AbstractTableModel{
-    private String[] columnas = {"IdPersona", "Usuario", "Clave"};
+    private String[] columnas = {"Nombre de la Persona", "Usuario", "Clave"};
     public static List<Usuario> filas;
     private Usuario usuarioSelecionado;
     private int indice;
